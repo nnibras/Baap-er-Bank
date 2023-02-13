@@ -2,10 +2,13 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const withdrawField = document.getElementById("withdraw-amount");
   const withdrawAmount = parseFloat(withdrawField.value);
 
+  if (isNaN(withdrawAmount))
+    alert("Thank you baba, kono taka tulish na ekhan theke");
+
   const balanceFieldCheck = document.getElementById("balance");
   const balanceAmountCheck = parseFloat(balanceFieldCheck.innerText);
 
-  if (balanceAmountCheck > withdrawAmount) {
+  if (balanceAmountCheck >= withdrawAmount) {
     const withdrawTotal = document.getElementById("amount-withdrawn");
     const withdrawPrevTotal = withdrawTotal.innerText;
 

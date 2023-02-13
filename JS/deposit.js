@@ -2,6 +2,8 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   const depositField = document.getElementById("deposit-amount");
   const depositAmount = parseFloat(depositField.value);
 
+  if (isNaN(depositAmount)) alert("Kire beta, khali keno? Kichu deposit kor");
+
   const depositTotal = document.getElementById("amount-deposited");
   const depositPrevTotal = depositTotal.innerText;
 
